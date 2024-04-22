@@ -1,19 +1,19 @@
 package fbl
 
 import (
-	lazadaConfig "github.com/wjp-letgo/lazadago/config"
-	fblentity "github.com/wjp-letgo/lazadago/fbl/entity"
 	"github.com/wjp-letgo/letgo/lib"
+	lazadaConfig "github.com/zhouzongyan/lazadago/config"
+	fblentity "github.com/zhouzongyan/lazadago/fbl/entity"
 )
 
-//Fbl
+// Fbl
 type Fbl struct {
 	Config *lazadaConfig.Config
 }
 
-//GetPlatformProducts
-//@Title Search products list
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/platform_products/get
+// GetPlatformProducts
+// @Title Search products list
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/platform_products/get
 func (s *Fbl) GetPlatformProducts(perPage int, sellerId int64, marketplace string, sellerSku string, platformSkuName string, readyForInbound bool, platformSku string, page int) fblentity.GetPlatformProductsResult {
 	method := "/fbl/platform_products/get"
 	params := lib.InRow{
@@ -43,9 +43,9 @@ func (s *Fbl) GetPlatformProducts(perPage int, sellerId int64, marketplace strin
 	return result
 }
 
-//GetFulfillmentProductDetail
-//@Title GET  fulfillment product Detail；Call Get Platform Products for fulfillment_sku first
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/fulfillment_products/get
+// GetFulfillmentProductDetail
+// @Title GET  fulfillment product Detail；Call Get Platform Products for fulfillment_sku first
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/fulfillment_products/get
 func (s *Fbl) GetFulfillmentProductDetail(perPage int, shelfLifeFlag bool, marketplace string, fulfillmentSku string, serialNumberFlag bool, page int, fulfillmentSkuName string, barcode string) fblentity.GetFulfillmentProductDetailResult {
 	method := "/fbl/fulfillment_products/get"
 	params := lib.InRow{
@@ -72,9 +72,9 @@ func (s *Fbl) GetFulfillmentProductDetail(perPage int, shelfLifeFlag bool, marke
 	return result
 }
 
-//GetInboundOrderDetail
-//@Title Use this API to get the Inbound Order Detail
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/inbound_order_detail/get
+// GetInboundOrderDetail
+// @Title Use this API to get the Inbound Order Detail
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/inbound_order_detail/get
 func (s *Fbl) GetInboundOrderDetail(inboundOrderNo string, marketplace string) fblentity.GetInboundOrderDetailResult {
 	method := "/fbl/inbound_order_detail/get"
 	params := lib.InRow{
@@ -89,9 +89,9 @@ func (s *Fbl) GetInboundOrderDetail(inboundOrderNo string, marketplace string) f
 	return result
 }
 
-//GetInboundOrderList
-//@Title Use this API to get inbound order list
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/inbound_orders/get
+// GetInboundOrderList
+// @Title Use this API to get inbound order list
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/inbound_orders/get
 func (s *Fbl) GetInboundOrderList(inboundOrderNo string, creationTimeFrom string, creationTimeTo string, inboundWarehouse string, sellerSku string, fulfillmentSku string, marketplace string, page string, perPage string) fblentity.GetInboundOrderListResult {
 	method := "/fbl/inbound_orders/get"
 	params := lib.InRow{
@@ -129,9 +129,9 @@ func (s *Fbl) GetInboundOrderList(inboundOrderNo string, creationTimeFrom string
 	return result
 }
 
-//GetInventoryChangedSKU
-//@Title Use this API to get SKU list
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/inventory_changed_sku/get
+// GetInventoryChangedSKU
+// @Title Use this API to get SKU list
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/inventory_changed_sku/get
 func (s *Fbl) GetInventoryChangedSKU(warehouseCode string, page int, perPage int, marketPlace string, operateTimeFrom string, operateTimeTo string) fblentity.GetInventoryChangedSKUResult {
 	method := "/fbl/inventory_changed_sku/get"
 	params := lib.InRow{
@@ -160,9 +160,9 @@ func (s *Fbl) GetInventoryChangedSKU(warehouseCode string, page int, perPage int
 	return result
 }
 
-//GetInventoryOperateLog
-//@Title Use this API to get a sku's inventory operate log
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/inventory_operate_log/get
+// GetInventoryOperateLog
+// @Title Use this API to get a sku's inventory operate log
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/inventory_operate_log/get
 func (s *Fbl) GetInventoryOperateLog(page int, perPage int, marketPlace string, operateTimeFrom string, operateTimeTo string, warehouseCode string, fulfillmentSkuId string) fblentity.GetInventoryOperateLogResult {
 	method := "/fbl/inventory_operate_log/get"
 	params := lib.InRow{
@@ -192,9 +192,9 @@ func (s *Fbl) GetInventoryOperateLog(page int, perPage int, marketPlace string, 
 	return result
 }
 
-//GetOutboundOrderDetail
-//@Title Use this API to Get outbound order detail; shoud call GetOutboundOrderList for outbound_order_no first
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/outbound_order_detail/get
+// GetOutboundOrderDetail
+// @Title Use this API to Get outbound order detail; shoud call GetOutboundOrderList for outbound_order_no first
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/outbound_order_detail/get
 func (s *Fbl) GetOutboundOrderDetail(outboundOrderNo string, marketplace string) fblentity.GetOutboundOrderDetailResult {
 	method := "/fbl/outbound_order_detail/get"
 	params := lib.InRow{
@@ -209,9 +209,9 @@ func (s *Fbl) GetOutboundOrderDetail(outboundOrderNo string, marketplace string)
 	return result
 }
 
-//GetOutboundOrderList
-//@Title Use this API to get outbound order list
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/outbound_orders/get
+// GetOutboundOrderList
+// @Title Use this API to get outbound order list
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/outbound_orders/get
 func (s *Fbl) GetOutboundOrderList(outboundOrderNo string, creationTimeFrom string, creationTimeTo string, outboundWarehouse string, sellerSku string, fulfillmentSku string, marketplace string, page string, perPage string) fblentity.GetOutboundOrderListResult {
 	method := "/fbl/outbound_orders/get"
 	params := lib.InRow{
@@ -249,9 +249,9 @@ func (s *Fbl) GetOutboundOrderList(outboundOrderNo string, creationTimeFrom stri
 	return result
 }
 
-//GetWarehouseStock
-//@Title Get SKU list and stock by warehouse code
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/stocks/get
+// GetWarehouseStock
+// @Title Get SKU list and stock by warehouse code
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/stocks/get
 func (s *Fbl) GetWarehouseStock(sellerSku string, marketplace string, fulfilmentSku string, storeCode string) fblentity.GetWarehouseStockResult {
 	method := "/fbl/stocks/get"
 	params := lib.InRow{
@@ -274,9 +274,9 @@ func (s *Fbl) GetWarehouseStock(sellerSku string, marketplace string, fulfilment
 	return result
 }
 
-//GetWarehouseStockV3
-//@Title Get SKU list and stock by warehouse code, this version separates pending inbound and stock in transit in return json.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/stocks/getV3
+// GetWarehouseStockV3
+// @Title Get SKU list and stock by warehouse code, this version separates pending inbound and stock in transit in return json.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/stocks/getV3
 func (s *Fbl) GetWarehouseStockV3(sellerSku string, marketplace string, fulfilmentSku string, storeCode string) fblentity.GetWarehouseStockV3Result {
 	method := "/fbl/stocks/getV3"
 	params := lib.InRow{
@@ -299,9 +299,9 @@ func (s *Fbl) GetWarehouseStockV3(sellerSku string, marketplace string, fulfilme
 	return result
 }
 
-//UploadWaybill
-//@Title Use this API to upload a waybill pdf to Lazada site. The maximum size of an pdf file is 1MB.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/waybill/upload
+// UploadWaybill
+// @Title Use this API to upload a waybill pdf to Lazada site. The maximum size of an pdf file is 1MB.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=17&path=/fbl/waybill/upload
 func (s *Fbl) UploadWaybill(waybill []byte, packageCode string, trackingNumber string, extendsField string, storeCode string) fblentity.UploadWaybillResult {
 	method := "/fbl/waybill/upload"
 	params := lib.InRow{

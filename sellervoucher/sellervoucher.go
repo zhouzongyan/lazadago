@@ -1,19 +1,19 @@
 package sellervoucher
 
 import (
-	lazadaConfig "github.com/wjp-letgo/lazadago/config"
-	sellervoucherentity "github.com/wjp-letgo/lazadago/sellervoucher/entity"
 	"github.com/wjp-letgo/letgo/lib"
+	lazadaConfig "github.com/zhouzongyan/lazadago/config"
+	sellervoucherentity "github.com/zhouzongyan/lazadago/sellervoucher/entity"
 )
 
-//SellerVoucher
+// SellerVoucher
 type SellerVoucher struct {
 	Config *lazadaConfig.Config
 }
 
-//SellerVoucherActivate
-//@Title activate seller voucher promotion
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/voucher/activate
+// SellerVoucherActivate
+// @Title activate seller voucher promotion
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/voucher/activate
 func (s *SellerVoucher) SellerVoucherActivate(voucherType string, id int64) sellervoucherentity.SellerVoucherActivateResult {
 	method := "/promotion/voucher/activate"
 	params := lib.InRow{
@@ -28,9 +28,9 @@ func (s *SellerVoucher) SellerVoucherActivate(voucherType string, id int64) sell
 	return result
 }
 
-//SellerVoucherAddSelectedProductSKU
-//@Title add seller voucher promotion product sku
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/voucher/product/sku/add
+// SellerVoucherAddSelectedProductSKU
+// @Title add seller voucher promotion product sku
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/voucher/product/sku/add
 func (s *SellerVoucher) SellerVoucherAddSelectedProductSKU(voucherType string, id int64, skuIds []int64) sellervoucherentity.SellerVoucherAddSelectedProductSKUResult {
 	method := "/promotion/voucher/product/sku/add"
 	params := lib.InRow{
@@ -46,9 +46,9 @@ func (s *SellerVoucher) SellerVoucherAddSelectedProductSKU(voucherType string, i
 	return result
 }
 
-//SellerVoucherCreate
-//@Title create a new seller voucher promotion
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/voucher/create
+// SellerVoucherCreate
+// @Title create a new seller voucher promotion
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/voucher/create
 func (s *SellerVoucher) SellerVoucherCreate(criteriaOverMoney string, voucherType string, apply string, collectStart int, displayArea string, periodEndTime int, voucherName string, voucherDiscountType string, offeringMoneyValueOff string, periodStartTime int, limit int, issued int, maxDiscountOfferingMoneyValue string, offeringPercentageDiscountOff int) sellervoucherentity.SellerVoucherCreateResult {
 	method := "/promotion/voucher/create"
 	params := lib.InRow{
@@ -83,9 +83,9 @@ func (s *SellerVoucher) SellerVoucherCreate(criteriaOverMoney string, voucherTyp
 	return result
 }
 
-//SellerVoucherDeactivate
-//@Title deactivate seller voucher promotion
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/voucher/deactivate
+// SellerVoucherDeactivate
+// @Title deactivate seller voucher promotion
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/voucher/deactivate
 func (s *SellerVoucher) SellerVoucherDeactivate(voucherType string, id int64) sellervoucherentity.SellerVoucherDeactivateResult {
 	method := "/promotion/voucher/deactivate"
 	params := lib.InRow{
@@ -100,9 +100,9 @@ func (s *SellerVoucher) SellerVoucherDeactivate(voucherType string, id int64) se
 	return result
 }
 
-//SellerVoucherDeleteSelectedProductSKU
-//@Title delete seller voucher promotion product sku
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/voucher/product/sku/remove
+// SellerVoucherDeleteSelectedProductSKU
+// @Title delete seller voucher promotion product sku
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/voucher/product/sku/remove
 func (s *SellerVoucher) SellerVoucherDeleteSelectedProductSKU(voucherType string, id int64, skuIds []int64) sellervoucherentity.SellerVoucherDeleteSelectedProductSKUResult {
 	method := "/promotion/voucher/product/sku/remove"
 	params := lib.InRow{
@@ -118,9 +118,9 @@ func (s *SellerVoucher) SellerVoucherDeleteSelectedProductSKU(voucherType string
 	return result
 }
 
-//SellerVoucherDetailQuery
-//@Title get a seller voucher promotion detail
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/voucher/get
+// SellerVoucherDetailQuery
+// @Title get a seller voucher promotion detail
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/voucher/get
 func (s *SellerVoucher) SellerVoucherDetailQuery(voucherType string, id int64) sellervoucherentity.SellerVoucherDetailQueryResult {
 	method := "/promotion/voucher/get"
 	params := lib.InRow{
@@ -135,9 +135,9 @@ func (s *SellerVoucher) SellerVoucherDetailQuery(voucherType string, id int64) s
 	return result
 }
 
-//SellerVoucherList
-//@Title query seller voucher promotion list
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/vouchers/get
+// SellerVoucherList
+// @Title query seller voucher promotion list
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/vouchers/get
 func (s *SellerVoucher) SellerVoucherList(curPage int, voucherType string, name string, pageSize int, status string) sellervoucherentity.SellerVoucherListResult {
 	method := "/promotion/vouchers/get"
 	params := lib.InRow{
@@ -163,9 +163,9 @@ func (s *SellerVoucher) SellerVoucherList(curPage int, voucherType string, name 
 	return result
 }
 
-//SellerVoucherSelectedProductList
-//@Title query seller voucher selected products list
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/voucher/products/get
+// SellerVoucherSelectedProductList
+// @Title query seller voucher selected products list
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/voucher/products/get
 func (s *SellerVoucher) SellerVoucherSelectedProductList(voucherType string, id int64) sellervoucherentity.SellerVoucherSelectedProductListResult {
 	method := "/promotion/voucher/products/get"
 	params := lib.InRow{
@@ -180,9 +180,9 @@ func (s *SellerVoucher) SellerVoucherSelectedProductList(voucherType string, id 
 	return result
 }
 
-//SellerVoucherUpdate
-//@Title update a existing seller voucher promotion
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/voucher/update
+// SellerVoucherUpdate
+// @Title update a existing seller voucher promotion
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=30&path=/promotion/voucher/update
 func (s *SellerVoucher) SellerVoucherUpdate(maxDiscountOfferingMoneyValue string, offeringPercentageDiscountOff int, id string, criteriaOverMoney string, voucherType string, apply string, collectStart int, displayArea string, periodEndTime int, voucherName string, voucherDiscountType string, offeringMoneyValueOff string, periodStartTime int, limit int, issued int) sellervoucherentity.SellerVoucherUpdateResult {
 	method := "/promotion/voucher/update"
 	params := lib.InRow{

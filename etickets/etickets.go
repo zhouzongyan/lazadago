@@ -1,19 +1,19 @@
 package etickets
 
 import (
-	lazadaConfig "github.com/wjp-letgo/lazadago/config"
-	eticketsentity "github.com/wjp-letgo/lazadago/etickets/entity"
 	"github.com/wjp-letgo/letgo/lib"
+	lazadaConfig "github.com/zhouzongyan/lazadago/config"
+	eticketsentity "github.com/zhouzongyan/lazadago/etickets/entity"
 )
 
-//ETickets
+// ETickets
 type ETickets struct {
 	Config *lazadaConfig.Config
 }
 
-//GetOrderItemsFromBarCode
-//@Title E-Ticcket certificate query Open API
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=21&path=/eticket/code/query
+// GetOrderItemsFromBarCode
+// @Title E-Ticcket certificate query Open API
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=21&path=/eticket/code/query
 func (s *ETickets) GetOrderItemsFromBarCode(code string) eticketsentity.GetOrderItemsFromBarCodeResult {
 	method := "/eticket/code/query"
 	params := lib.InRow{
@@ -27,9 +27,9 @@ func (s *ETickets) GetOrderItemsFromBarCode(code string) eticketsentity.GetOrder
 	return result
 }
 
-//RedeemOrderItems
-//@Title Certificate Consume Open API
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=21&path=/eticket/code/consume
+// RedeemOrderItems
+// @Title Certificate Consume Open API
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=21&path=/eticket/code/consume
 func (s *ETickets) RedeemOrderItems(bizType int, code string, outerId string, serialNum string, consumeNum int, storeId string, posId string) eticketsentity.RedeemOrderItemsResult {
 	method := "/eticket/code/consume"
 	params := lib.InRow{
@@ -53,9 +53,9 @@ func (s *ETickets) RedeemOrderItems(bizType int, code string, outerId string, se
 	return result
 }
 
-//GlobalEticketMerchantMaAvailable
-//@Title the callback interface before consume  code
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=21&path=/eticket/ma/available
+// GlobalEticketMerchantMaAvailable
+// @Title the callback interface before consume  code
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=21&path=/eticket/ma/available
 func (s *ETickets) GlobalEticketMerchantMaAvailable(bizType int, code string, serialNum string, posId string, outerId string, consumeNum int, consumeStoreId string) eticketsentity.GlobalEticketMerchantMaAvailableResult {
 	method := "/eticket/ma/available"
 	params := lib.InRow{
@@ -77,9 +77,9 @@ func (s *ETickets) GlobalEticketMerchantMaAvailable(bizType int, code string, se
 	return result
 }
 
-//GlobalEticketMerchantMaConsume
-//@Title consume ma
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=21&path=/eticket/ma/consume
+// GlobalEticketMerchantMaConsume
+// @Title consume ma
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=21&path=/eticket/ma/consume
 func (s *ETickets) GlobalEticketMerchantMaConsume(bizType int, serialNum string, posId string, outerId string, consumeNum int, code string, consumeStoreId string) eticketsentity.GlobalEticketMerchantMaConsumeResult {
 	method := "/eticket/ma/consume"
 	params := lib.InRow{
@@ -101,9 +101,9 @@ func (s *ETickets) GlobalEticketMerchantMaConsume(bizType int, serialNum string,
 	return result
 }
 
-//GlobalEticketMerchantMaFailsend
-//@Title the callback interface when send code failed
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=21&path=/eticket/ma/failsend
+// GlobalEticketMerchantMaFailsend
+// @Title the callback interface when send code failed
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=21&path=/eticket/ma/failsend
 func (s *ETickets) GlobalEticketMerchantMaFailsend(bizType int, subCode string, outerId string, subMsg string) eticketsentity.GlobalEticketMerchantMaFailsendResult {
 	method := "/eticket/ma/failsend"
 	params := lib.InRow{
@@ -120,9 +120,9 @@ func (s *ETickets) GlobalEticketMerchantMaFailsend(bizType int, subCode string, 
 	return result
 }
 
-//GlobalEticketMerchantMaQuery
-//@Title the callback interface that query lazada platform ma
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=21&path=/eticket/ma/query
+// GlobalEticketMerchantMaQuery
+// @Title the callback interface that query lazada platform ma
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=21&path=/eticket/ma/query
 func (s *ETickets) GlobalEticketMerchantMaQuery(code string, sellerId int64, storeId int64) eticketsentity.GlobalEticketMerchantMaQueryResult {
 	method := "/eticket/ma/query"
 	params := lib.InRow{
@@ -140,9 +140,9 @@ func (s *ETickets) GlobalEticketMerchantMaQuery(code string, sellerId int64, sto
 	return result
 }
 
-//GlobalEticketMerchantMaQueryTbMa
-//@Title the callback interface that query tb ma
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=21&path=/eticket/ma/queryTbMa
+// GlobalEticketMerchantMaQueryTbMa
+// @Title the callback interface that query tb ma
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=21&path=/eticket/ma/queryTbMa
 func (s *ETickets) GlobalEticketMerchantMaQueryTbMa(code string) eticketsentity.GlobalEticketMerchantMaQueryTbMaResult {
 	method := "/eticket/ma/queryTbMa"
 	params := lib.InRow{
@@ -156,9 +156,9 @@ func (s *ETickets) GlobalEticketMerchantMaQueryTbMa(code string) eticketsentity.
 	return result
 }
 
-//GlobalEticketMerchantMaSend
-//@Title the callback interface when merchant send code successful
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=21&path=/eticket/ma/send
+// GlobalEticketMerchantMaSend
+// @Title the callback interface when merchant send code successful
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=21&path=/eticket/ma/send
 func (s *ETickets) GlobalEticketMerchantMaSend(bizType int, isvMaList []eticketsentity.GlobalEticketMerchantMaSendIsvMaListRequestEntity, outerId string) eticketsentity.GlobalEticketMerchantMaSendResult {
 	method := "/eticket/ma/send"
 	params := lib.InRow{

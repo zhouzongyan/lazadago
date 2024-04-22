@@ -1,19 +1,19 @@
 package seller
 
 import (
-	lazadaConfig "github.com/wjp-letgo/lazadago/config"
-	sellerentity "github.com/wjp-letgo/lazadago/seller/entity"
 	"github.com/wjp-letgo/letgo/lib"
+	lazadaConfig "github.com/zhouzongyan/lazadago/config"
+	sellerentity "github.com/zhouzongyan/lazadago/seller/entity"
 )
 
-//Seller
+// Seller
 type Seller struct {
 	Config *lazadaConfig.Config
 }
 
-//GetMultiWarehouseBySeller
-//@Title Provide seller multi warehouse address data of the specific seller, like warehouse code and warehouse name and etc.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=2&path=/seller/warehouse/get
+// GetMultiWarehouseBySeller
+// @Title Provide seller multi warehouse address data of the specific seller, like warehouse code and warehouse name and etc.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=2&path=/seller/warehouse/get
 func (s *Seller) GetMultiWarehouseBySeller(addressTypes []string) sellerentity.GetMultiWarehouseBySellerResult {
 	method := "/seller/warehouse/get"
 	params := lib.InRow{
@@ -27,9 +27,9 @@ func (s *Seller) GetMultiWarehouseBySeller(addressTypes []string) sellerentity.G
 	return result
 }
 
-//GetSeller
-//@Title Get seller information by current seller ID.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=2&path=/seller/get
+// GetSeller
+// @Title Get seller information by current seller ID.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=2&path=/seller/get
 func (s *Seller) GetSeller() sellerentity.GetSellerResult {
 	method := "/seller/get"
 	params := lib.InRow{}
@@ -41,9 +41,9 @@ func (s *Seller) GetSeller() sellerentity.GetSellerResult {
 	return result
 }
 
-//GetSellerMetricsById
-//@Title Provide seller metrics data of the specific seller, like positive seller rating, ship on time rate and etc.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=2&path=/seller/metrics/get
+// GetSellerMetricsById
+// @Title Provide seller metrics data of the specific seller, like positive seller rating, ship on time rate and etc.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=2&path=/seller/metrics/get
 func (s *Seller) GetSellerMetricsById() sellerentity.GetSellerMetricsByIdResult {
 	method := "/seller/metrics/get"
 	params := lib.InRow{}
@@ -55,9 +55,9 @@ func (s *Seller) GetSellerMetricsById() sellerentity.GetSellerMetricsByIdResult 
 	return result
 }
 
-//GetSellerPerformance
-//@Title Provide the performance metrics of the current seller, such as positive seller rating, ship on time, etc.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=2&path=/seller/performance/get
+// GetSellerPerformance
+// @Title Provide the performance metrics of the current seller, such as positive seller rating, ship on time, etc.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=2&path=/seller/performance/get
 func (s *Seller) GetSellerPerformance(language string) sellerentity.GetSellerPerformanceResult {
 	method := "/seller/performance/get"
 	params := lib.InRow{}
@@ -72,9 +72,9 @@ func (s *Seller) GetSellerPerformance(language string) sellerentity.GetSellerPer
 	return result
 }
 
-//UpdateSeller
-//@Title Use this API to update the email address of the seller who makes the call.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=2&path=/seller/update
+// UpdateSeller
+// @Title Use this API to update the email address of the seller who makes the call.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=2&path=/seller/update
 func (s *Seller) UpdateSeller(payload string) sellerentity.UpdateSellerResult {
 	method := "/seller/update"
 	params := lib.InRow{
@@ -88,9 +88,9 @@ func (s *Seller) UpdateSeller(payload string) sellerentity.UpdateSellerResult {
 	return result
 }
 
-//UpdateUser
-//@Title Use this API to update the email address of a user under the seller account.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=2&path=/user/update
+// UpdateUser
+// @Title Use this API to update the email address of a user under the seller account.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=2&path=/user/update
 func (s *Seller) UpdateUser(payload string) sellerentity.UpdateUserResult {
 	method := "/user/update"
 	params := lib.InRow{

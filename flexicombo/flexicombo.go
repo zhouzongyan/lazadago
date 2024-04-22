@@ -1,19 +1,19 @@
 package flexicombo
 
 import (
-	lazadaConfig "github.com/wjp-letgo/lazadago/config"
-	flexicomboentity "github.com/wjp-letgo/lazadago/flexicombo/entity"
 	"github.com/wjp-letgo/letgo/lib"
+	lazadaConfig "github.com/zhouzongyan/lazadago/config"
+	flexicomboentity "github.com/zhouzongyan/lazadago/flexicombo/entity"
 )
 
-//FlexiCombo
+// FlexiCombo
 type FlexiCombo struct {
 	Config *lazadaConfig.Config
 }
 
-//ActivateFlexiCombo
-//@Title activate flexi combo
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/activate
+// ActivateFlexiCombo
+// @Title activate flexi combo
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/activate
 func (s *FlexiCombo) ActivateFlexiCombo(id int64) flexicomboentity.ActivateFlexiComboResult {
 	method := "/promotion/flexicombo/activate"
 	params := lib.InRow{
@@ -27,9 +27,9 @@ func (s *FlexiCombo) ActivateFlexiCombo(id int64) flexicomboentity.ActivateFlexi
 	return result
 }
 
-//AddFlexiComboProducts
-//@Title add flexi combo products
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/products/add
+// AddFlexiComboProducts
+// @Title add flexi combo products
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/products/add
 func (s *FlexiCombo) AddFlexiComboProducts(id int64, skuIds []int64) flexicomboentity.AddFlexiComboProductsResult {
 	method := "/promotion/flexicombo/products/add"
 	params := lib.InRow{
@@ -44,9 +44,9 @@ func (s *FlexiCombo) AddFlexiComboProducts(id int64, skuIds []int64) flexicomboe
 	return result
 }
 
-//CreateFlexiCombo
-//@Title create a  new promotion flexi combo
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/create
+// CreateFlexiCombo
+// @Title create a  new promotion flexi combo
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/create
 func (s *FlexiCombo) CreateFlexiCombo(apply string, sampleSkus []flexicomboentity.CreateFlexiComboSampleSkusRequestEntity, criteriaType string, criteriaValue []string, orderNumbers int, name string, platformChannel string, giftSkus []flexicomboentity.CreateFlexiComboGiftSkusRequestEntity, startTime int, discountType string, endTime int, discountValue []string, stackable string) flexicomboentity.CreateFlexiComboResult {
 	method := "/promotion/flexicombo/create"
 	params := lib.InRow{
@@ -74,9 +74,9 @@ func (s *FlexiCombo) CreateFlexiCombo(apply string, sampleSkus []flexicomboentit
 	return result
 }
 
-//DeactivateFlexiCombo
-//@Title deactivate flexi combo
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/deactivate
+// DeactivateFlexiCombo
+// @Title deactivate flexi combo
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/deactivate
 func (s *FlexiCombo) DeactivateFlexiCombo(id int64) flexicomboentity.DeactivateFlexiComboResult {
 	method := "/promotion/flexicombo/deactivate"
 	params := lib.InRow{
@@ -90,9 +90,9 @@ func (s *FlexiCombo) DeactivateFlexiCombo(id int64) flexicomboentity.DeactivateF
 	return result
 }
 
-//DeleteFlexiComboProducts
-//@Title delete flexi combo products
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/products/delete
+// DeleteFlexiComboProducts
+// @Title delete flexi combo products
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/products/delete
 func (s *FlexiCombo) DeleteFlexiComboProducts(id int64, skuIds []int64) flexicomboentity.DeleteFlexiComboProductsResult {
 	method := "/promotion/flexicombo/products/delete"
 	params := lib.InRow{
@@ -107,9 +107,9 @@ func (s *FlexiCombo) DeleteFlexiComboProducts(id int64, skuIds []int64) flexicom
 	return result
 }
 
-//GetFlexiComboDetails
-//@Title get promotion flexi combo detail by id
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/details
+// GetFlexiComboDetails
+// @Title get promotion flexi combo detail by id
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/details
 func (s *FlexiCombo) GetFlexiComboDetails(id int64) flexicomboentity.GetFlexiComboDetailsResult {
 	method := "/promotion/flexicombo/details"
 	params := lib.InRow{
@@ -123,9 +123,9 @@ func (s *FlexiCombo) GetFlexiComboDetails(id int64) flexicomboentity.GetFlexiCom
 	return result
 }
 
-//ListFlexiCombo
-//@Title list flexi combo
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/list
+// ListFlexiCombo
+// @Title list flexi combo
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/list
 func (s *FlexiCombo) ListFlexiCombo(curPage int, name string, pageSize int, status string) flexicomboentity.ListFlexiComboResult {
 	method := "/promotion/flexicombo/list"
 	params := lib.InRow{
@@ -146,9 +146,9 @@ func (s *FlexiCombo) ListFlexiCombo(curPage int, name string, pageSize int, stat
 	return result
 }
 
-//ListFlexiComboProducts
-//@Title list flexi combo products
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/products/list
+// ListFlexiComboProducts
+// @Title list flexi combo products
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/products/list
 func (s *FlexiCombo) ListFlexiComboProducts(curPage int, pageSize int, id int64) flexicomboentity.ListFlexiComboProductsResult {
 	method := "/promotion/flexicombo/products/list"
 	params := lib.InRow{
@@ -164,9 +164,9 @@ func (s *FlexiCombo) ListFlexiComboProducts(curPage int, pageSize int, id int64)
 	return result
 }
 
-//UpdateFlexiCombo
-//@Title update flexi combo
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/update
+// UpdateFlexiCombo
+// @Title update flexi combo
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=25&path=/promotion/flexicombo/update
 func (s *FlexiCombo) UpdateFlexiCombo(apply string, sampleSkus []flexicomboentity.UpdateFlexiComboSampleSkusRequestEntity, criteriaType string, criteriaValue []string, orderNumbers int, name string, platformChannel string, giftSkus []flexicomboentity.UpdateFlexiComboGiftSkusRequestEntity, startTime int, discountType string, id int64, endTime int, discountValue []string, stackable string) flexicomboentity.UpdateFlexiComboResult {
 	method := "/promotion/flexicombo/update"
 	params := lib.InRow{

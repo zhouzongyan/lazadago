@@ -1,20 +1,20 @@
 package datamoat
 
 import (
-	lazadaConfig "github.com/wjp-letgo/lazadago/config"
-	datamoatentity "github.com/wjp-letgo/lazadago/datamoat/entity"
 	"github.com/wjp-letgo/letgo/lib"
+	lazadaConfig "github.com/zhouzongyan/lazadago/config"
+	datamoatentity "github.com/zhouzongyan/lazadago/datamoat/entity"
 )
 
-//DataMoat
+// DataMoat
 type DataMoat struct {
 	Config *lazadaConfig.Config
 }
 
-//DataMoatComputeRisk
-//@Title Note that currently all the regions must use the domain "api.lazada.com" to invoke this API.
-//This API is used to access DataMoat Account Security Service, which is required in the process of accessing sensitive data.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=15&path=/datamoat/compute_risk
+// DataMoatComputeRisk
+// @Title Note that currently all the regions must use the domain "api.lazada.com" to invoke this API.
+// This API is used to access DataMoat Account Security Service, which is required in the process of accessing sensitive data.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=15&path=/datamoat/compute_risk
 func (s *DataMoat) DataMoatComputeRisk(time string, appName string, userId string, userIp string, ati string) datamoatentity.DataMoatComputeRiskResult {
 	method := "/datamoat/compute_risk"
 	params := lib.InRow{
@@ -32,10 +32,10 @@ func (s *DataMoat) DataMoatComputeRisk(time string, appName string, userId strin
 	return result
 }
 
-//DataMoatLogin
-//@Title Note that currently all the regions must use the domain "api.lazada.com" to invoke this API.
-//This API is used to access DataMoat Account Security Service, which is required in the process of accessing sensitive data.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=15&path=/datamoat/login
+// DataMoatLogin
+// @Title Note that currently all the regions must use the domain "api.lazada.com" to invoke this API.
+// This API is used to access DataMoat Account Security Service, which is required in the process of accessing sensitive data.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=15&path=/datamoat/login
 func (s *DataMoat) DataMoatLogin(time string, appName string, userId string, tid string, userIp string, ati string, loginResult string, loginMessage string) datamoatentity.DataMoatLoginResult {
 	method := "/datamoat/login"
 	params := lib.InRow{

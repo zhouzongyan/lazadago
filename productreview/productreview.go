@@ -1,19 +1,19 @@
 package productreview
 
 import (
-	lazadaConfig "github.com/wjp-letgo/lazadago/config"
-	productreviewentity "github.com/wjp-letgo/lazadago/productreview/entity"
 	"github.com/wjp-letgo/letgo/lib"
+	lazadaConfig "github.com/zhouzongyan/lazadago/config"
+	productreviewentity "github.com/zhouzongyan/lazadago/productreview/entity"
 )
 
-//ProductReview
+// ProductReview
 type ProductReview struct {
 	Config *lazadaConfig.Config
 }
 
-//GetProductReviewList
-//@Title get the review list for one seller
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=33&path=/review/seller/list
+// GetProductReviewList
+// @Title get the review list for one seller
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=33&path=/review/seller/list
 func (s *ProductReview) GetProductReviewList(itemId int64, orderId int64, startTime int, endTime int, contentFilter string, statusFilter string, pageSize int, current int) productreviewentity.GetProductReviewListResult {
 	method := "/review/seller/list"
 	params := lib.InRow{
@@ -48,9 +48,9 @@ func (s *ProductReview) GetProductReviewList(itemId int64, orderId int64, startT
 	return result
 }
 
-//SubmitSellerReply
-//@Title submit seller reply for customers review
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=33&path=/review/seller/reply/add
+// SubmitSellerReply
+// @Title submit seller reply for customers review
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=33&path=/review/seller/reply/add
 func (s *ProductReview) SubmitSellerReply(id int64, content string) productreviewentity.SubmitSellerReplyResult {
 	method := "/review/seller/reply/add"
 	params := lib.InRow{

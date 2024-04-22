@@ -1,19 +1,19 @@
 package system
 
 import (
-	lazadaConfig "github.com/wjp-letgo/lazadago/config"
-	systementity "github.com/wjp-letgo/lazadago/system/entity"
 	"github.com/wjp-letgo/letgo/lib"
+	lazadaConfig "github.com/zhouzongyan/lazadago/config"
+	systementity "github.com/zhouzongyan/lazadago/system/entity"
 )
 
-//System
+// System
 type System struct {
 	Config *lazadaConfig.Config
 }
 
-//GenerateAccessToken
-//@Title generate access_token for call api
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.bd786bbeNJUDaJ#/api?cid=11&path=/auth/token/create
+// GenerateAccessToken
+// @Title generate access_token for call api
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.bd786bbeNJUDaJ#/api?cid=11&path=/auth/token/create
 func (s *System) GenerateAccessToken(code string, uuid string) systementity.GenerateAccessTokenResult {
 	method := "/auth/token/create"
 	params := lib.InRow{
@@ -30,9 +30,9 @@ func (s *System) GenerateAccessToken(code string, uuid string) systementity.Gene
 	return result
 }
 
-//RefreshAccessToken
-//@Title refresh access_token, the endpoint is https://auth.lazada.com/rest
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.bd786bbeNJUDaJ#/api?cid=11&path=/auth/token/refresh
+// RefreshAccessToken
+// @Title refresh access_token, the endpoint is https://auth.lazada.com/rest
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.bd786bbeNJUDaJ#/api?cid=11&path=/auth/token/refresh
 func (s *System) RefreshAccessToken(refreshToken string) systementity.RefreshAccessTokenResult {
 	method := "/auth/token/refresh"
 	params := lib.InRow{

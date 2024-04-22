@@ -1,19 +1,19 @@
 package firstmilebigbag
 
 import (
-	lazadaConfig "github.com/wjp-letgo/lazadago/config"
-	firstmilebigbagentity "github.com/wjp-letgo/lazadago/firstmilebigbag/entity"
 	"github.com/wjp-letgo/letgo/lib"
+	lazadaConfig "github.com/zhouzongyan/lazadago/config"
+	firstmilebigbagentity "github.com/zhouzongyan/lazadago/firstmilebigbag/entity"
 )
 
-//FirstMileBigbag
+// FirstMileBigbag
 type FirstMileBigbag struct {
 	Config *lazadaConfig.Config
 }
 
-//GetLazadaBigbagPDFLable
-//@Title Get Lazada Bigbag PDF Lable
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cnpms/bigbag/lable/getPdf
+// GetLazadaBigbagPDFLable
+// @Title Get Lazada Bigbag PDF Lable
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cnpms/bigbag/lable/getPdf
 func (s *FirstMileBigbag) GetLazadaBigbagPDFLable(userInfo firstmilebigbagentity.GetLazadaBigbagPDFLableUserInfoRequestEntity, client string, orderCode string, remark string, locale string, trackingNumber string) firstmilebigbagentity.GetLazadaBigbagPDFLableResult {
 	method := "/logistics/cnpms/bigbag/lable/getPdf"
 	params := lib.InRow{
@@ -40,9 +40,9 @@ func (s *FirstMileBigbag) GetLazadaBigbagPDFLable(userInfo firstmilebigbagentity
 	return result
 }
 
-//GetNewBagNumber
-//@Title 1.Seller call the api to get the new lzd bag number.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/lzd_bag/get
+// GetNewBagNumber
+// @Title 1.Seller call the api to get the new lzd bag number.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/lzd_bag/get
 func (s *FirstMileBigbag) GetNewBagNumber() firstmilebigbagentity.GetNewBagNumberResult {
 	method := "/logistics/lzd_bag/get"
 	params := lib.InRow{}
@@ -54,9 +54,9 @@ func (s *FirstMileBigbag) GetNewBagNumber() firstmilebigbagentity.GetNewBagNumbe
 	return result
 }
 
-//LazadaBigbagCancel
-//@Title Lazada Bigbag cancel
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cnpms/bigbag/cancel
+// LazadaBigbagCancel
+// @Title Lazada Bigbag cancel
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cnpms/bigbag/cancel
 func (s *FirstMileBigbag) LazadaBigbagCancel(userInfo firstmilebigbagentity.LazadaBigbagCancelUserInfoRequestEntity, client string, orderCode string, remark string, locale string, trackingNumber string) firstmilebigbagentity.LazadaBigbagCancelResult {
 	method := "/logistics/cnpms/bigbag/cancel"
 	params := lib.InRow{
@@ -83,9 +83,9 @@ func (s *FirstMileBigbag) LazadaBigbagCancel(userInfo firstmilebigbagentity.Laza
 	return result
 }
 
-//LazadaBigbagCollectionPoints
-//@Title Lazada bigbag query collection points
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cnpms/bigbag/querycollection
+// LazadaBigbagCollectionPoints
+// @Title Lazada bigbag query collection points
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cnpms/bigbag/querycollection
 func (s *FirstMileBigbag) LazadaBigbagCollectionPoints(pageSize string, currentPage string) firstmilebigbagentity.LazadaBigbagCollectionPointsResult {
 	method := "/logistics/cnpms/bigbag/querycollection"
 	params := lib.InRow{}
@@ -103,9 +103,9 @@ func (s *FirstMileBigbag) LazadaBigbagCollectionPoints(pageSize string, currentP
 	return result
 }
 
-//LazadaBigbagCommit
-//@Title Lazada bigbag commit
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cnpms/bigbag/commit
+// LazadaBigbagCommit
+// @Title Lazada bigbag commit
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cnpms/bigbag/commit
 func (s *FirstMileBigbag) LazadaBigbagCommit(client string, collectionInfo firstmilebigbagentity.LazadaBigbagCommitCollectionInfoRequestEntity, remark string, pickupInfo firstmilebigbagentity.LazadaBigbagCommitPickupInfoRequestEntity, locale string, weightUnit string, tp string, sellerTrackingNumber string, returnInfo firstmilebigbagentity.LazadaBigbagCommitReturnInfoRequestEntity, userInfo firstmilebigbagentity.LazadaBigbagCommitUserInfoRequestEntity, orderCodeList []string, weight string) firstmilebigbagentity.LazadaBigbagCommitResult {
 	method := "/logistics/cnpms/bigbag/commit"
 	params := lib.InRow{
@@ -135,9 +135,9 @@ func (s *FirstMileBigbag) LazadaBigbagCommit(client string, collectionInfo first
 	return result
 }
 
-//LazadaBigbagUpdate
-//@Title Lazada bigbag update
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cnpms/bigbag/update
+// LazadaBigbagUpdate
+// @Title Lazada bigbag update
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cnpms/bigbag/update
 func (s *FirstMileBigbag) LazadaBigbagUpdate(userInfo firstmilebigbagentity.LazadaBigbagUpdateUserInfoRequestEntity, weight int, locale string, orderCodeList []string, client string, orderCode string, trackingNumber string, weightUnit string) firstmilebigbagentity.LazadaBigbagUpdateResult {
 	method := "/logistics/cnpms/bigbag/update"
 	params := lib.InRow{
@@ -164,9 +164,9 @@ func (s *FirstMileBigbag) LazadaBigbagUpdate(userInfo firstmilebigbagentity.Laza
 	return result
 }
 
-//LazadaSellerAccountBind
-//@Title Lazada seller account bind for big bag pick up
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cnpms/account/bind
+// LazadaSellerAccountBind
+// @Title Lazada seller account bind for big bag pick up
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cnpms/account/bind
 func (s *FirstMileBigbag) LazadaSellerAccountBind(userInfo firstmilebigbagentity.LazadaSellerAccountBindUserInfoRequestEntity, client string, remark string, sellerList []firstmilebigbagentity.LazadaSellerAccountBindSellerListRequestEntity, locale string) firstmilebigbagentity.LazadaSellerAccountBindResult {
 	method := "/logistics/cnpms/account/bind"
 	params := lib.InRow{
@@ -190,9 +190,9 @@ func (s *FirstMileBigbag) LazadaSellerAccountBind(userInfo firstmilebigbagentity
 	return result
 }
 
-//QueryAddressInformaiton
-//@Title Query Address Informaiton
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cnpms/address/query
+// QueryAddressInformaiton
+// @Title Query Address Informaiton
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cnpms/address/query
 func (s *FirstMileBigbag) QueryAddressInformaiton(country string, zipCode string, userInfo firstmilebigbagentity.QueryAddressInformaitonUserInfoRequestEntity, city string, remark string, locale string, province string, street string, district string, detailAddress string, client string) firstmilebigbagentity.QueryAddressInformaitonResult {
 	method := "/logistics/cnpms/address/query"
 	params := lib.InRow{
@@ -224,9 +224,9 @@ func (s *FirstMileBigbag) QueryAddressInformaiton(country string, zipCode string
 	return result
 }
 
-//QueryLazadaBigbagInfo
-//@Title Query Lazada Bigbag Info
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cnpms/bigbag/query
+// QueryLazadaBigbagInfo
+// @Title Query Lazada Bigbag Info
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cnpms/bigbag/query
 func (s *FirstMileBigbag) QueryLazadaBigbagInfo(userInfo firstmilebigbagentity.QueryLazadaBigbagInfoUserInfoRequestEntity, client string, orderCode string, remark string, locale string, trackingNumber string) firstmilebigbagentity.QueryLazadaBigbagInfoResult {
 	method := "/logistics/cnpms/bigbag/query"
 	params := lib.InRow{
@@ -253,9 +253,9 @@ func (s *FirstMileBigbag) QueryLazadaBigbagInfo(userInfo firstmilebigbagentity.Q
 	return result
 }
 
-//QueryPackageStatus
-//@Title 1.seller post the tracking number and get the status of the package relative to the tracking number.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/package/query
+// QueryPackageStatus
+// @Title 1.seller post the tracking number and get the status of the package relative to the tracking number.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/package/query
 func (s *FirstMileBigbag) QueryPackageStatus(trackingNumbers []string) firstmilebigbagentity.QueryPackageStatusResult {
 	method := "/logistics/package/query"
 	params := lib.InRow{
@@ -269,10 +269,10 @@ func (s *FirstMileBigbag) QueryPackageStatus(trackingNumbers []string) firstmile
 	return result
 }
 
-//UploadLazadaBagNumber
-//@Title 1.seller call api to post the Lazada bag number and relative tracking number
-//2.Api return the lzd bag number.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/lzd_bag/upload
+// UploadLazadaBagNumber
+// @Title 1.seller call api to post the Lazada bag number and relative tracking number
+// 2.Api return the lzd bag number.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/lzd_bag/upload
 func (s *FirstMileBigbag) UploadLazadaBagNumber(trackingNumbers []string, erpBagNumber string, parcelsTotal int, lzdBagNumber string) firstmilebigbagentity.UploadLazadaBagNumberResult {
 	method := "/logistics/lzd_bag/upload"
 	params := lib.InRow{
@@ -289,10 +289,10 @@ func (s *FirstMileBigbag) UploadLazadaBagNumber(trackingNumbers []string, erpBag
 	return result
 }
 
-//UploadSellerBagNumber
-//@Title 1.seller call api to post the seller bag number and relative tracking number
-//2.Api return the lzd bag number.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/seller_bag/upload
+// UploadSellerBagNumber
+// @Title 1.seller call api to post the seller bag number and relative tracking number
+// 2.Api return the lzd bag number.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/seller_bag/upload
 func (s *FirstMileBigbag) UploadSellerBagNumber(trackingNumbers []string, erpBagNumber string, parcelsTotal int) firstmilebigbagentity.UploadSellerBagNumberResult {
 	method := "/logistics/seller_bag/upload"
 	params := lib.InRow{
@@ -308,9 +308,9 @@ func (s *FirstMileBigbag) UploadSellerBagNumber(trackingNumbers []string, erpBag
 	return result
 }
 
-//GetChannelcodeByFirstMileNo
-//@Title get channelcode by first mile No
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cngfc/fulfill/getchannelcode
+// GetChannelcodeByFirstMileNo
+// @Title get channelcode by first mile No
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=34&path=/logistics/cngfc/fulfill/getchannelcode
 func (s *FirstMileBigbag) GetChannelcodeByFirstMileNo(firstMileNos []string) firstmilebigbagentity.GetChannelcodeByFirstMileNoResult {
 	method := "/logistics/cngfc/fulfill/getchannelcode"
 	params := lib.InRow{

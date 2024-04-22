@@ -1,19 +1,19 @@
 package gspproduct
 
 import (
-	lazadaConfig "github.com/wjp-letgo/lazadago/config"
-	gspproductentity "github.com/wjp-letgo/lazadago/gspproduct/entity"
 	"github.com/wjp-letgo/letgo/lib"
+	lazadaConfig "github.com/zhouzongyan/lazadago/config"
+	gspproductentity "github.com/zhouzongyan/lazadago/gspproduct/entity"
 )
 
-//GspProduct
+// GspProduct
 type GspProduct struct {
 	Config *lazadaConfig.Config
 }
 
-//CreateGlobalProduct
-//@Title Use this API to create a single new global product to multiple Lazada sites.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=18&path=/product/global/create
+// CreateGlobalProduct
+// @Title Use this API to create a single new global product to multiple Lazada sites.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=18&path=/product/global/create
 func (s *GspProduct) CreateGlobalProduct(payload string) gspproductentity.CreateGlobalProductResult {
 	method := "/product/global/create"
 	params := lib.InRow{
@@ -27,9 +27,9 @@ func (s *GspProduct) CreateGlobalProduct(payload string) gspproductentity.Create
 	return result
 }
 
-//GetGlobalProductStatus
-//@Title Use this API to query the status of the specified global product. It takes several minutes for the global product to be created on each site.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=18&path=/product/global/status/get
+// GetGlobalProductStatus
+// @Title Use this API to query the status of the specified global product. It takes several minutes for the global product to be created on each site.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=18&path=/product/global/status/get
 func (s *GspProduct) GetGlobalProductStatus(p gspproductentity.GetGlobalProductStatusParamsRequestEntity) gspproductentity.GetGlobalProductStatusResult {
 	method := "/product/global/status/get"
 	params := lib.InRow{
@@ -43,9 +43,9 @@ func (s *GspProduct) GetGlobalProductStatus(p gspproductentity.GetGlobalProductS
 	return result
 }
 
-//GetUnfilledAttribute
-//@Title get the product which hava attribute not filled
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=18&path=/product/global/unfilled/attribute/get
+// GetUnfilledAttribute
+// @Title get the product which hava attribute not filled
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=18&path=/product/global/unfilled/attribute/get
 func (s *GspProduct) GetUnfilledAttribute(offset int, limit int, attributeTag string) gspproductentity.GetUnfilledAttributeResult {
 	method := "/product/global/unfilled/attribute/get"
 	params := lib.InRow{
@@ -61,9 +61,9 @@ func (s *GspProduct) GetUnfilledAttribute(offset int, limit int, attributeTag st
 	return result
 }
 
-//UpdateGlobalProductAttribute
-//@Title update global product attribute
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=18&path=/product/global/attribute/update
+// UpdateGlobalProductAttribute
+// @Title update global product attribute
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=18&path=/product/global/attribute/update
 func (s *GspProduct) UpdateGlobalProductAttribute(payload string) gspproductentity.UpdateGlobalProductAttributeResult {
 	method := "/product/global/attribute/update"
 	params := lib.InRow{

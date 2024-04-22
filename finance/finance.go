@@ -1,19 +1,19 @@
 package finance
 
 import (
-	lazadaConfig "github.com/wjp-letgo/lazadago/config"
-	financeentity "github.com/wjp-letgo/lazadago/finance/entity"
 	"github.com/wjp-letgo/letgo/lib"
+	lazadaConfig "github.com/zhouzongyan/lazadago/config"
+	financeentity "github.com/zhouzongyan/lazadago/finance/entity"
 )
 
-//Finance
+// Finance
 type Finance struct {
 	Config *lazadaConfig.Config
 }
 
-//GetPayoutStatus
-//@Title Get your transaction statements  created after the provided date
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=9&path=/finance/payout/status/get
+// GetPayoutStatus
+// @Title Get your transaction statements  created after the provided date
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=9&path=/finance/payout/status/get
 func (s *Finance) GetPayoutStatus(createdAfter string) financeentity.GetPayoutStatusResult {
 	method := "/finance/payout/status/get"
 	params := lib.InRow{
@@ -27,9 +27,9 @@ func (s *Finance) GetPayoutStatus(createdAfter string) financeentity.GetPayoutSt
 	return result
 }
 
-//GetTransactionDetails
-//@Title Use this API to get transaction or fee details in a specified period.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=9&path=/finance/transaction/detail/get
+// GetTransactionDetails
+// @Title Use this API to get transaction or fee details in a specified period.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=9&path=/finance/transaction/detail/get
 func (s *Finance) GetTransactionDetails(transType string, startTime string, endTime string, limit string, offset string) financeentity.GetTransactionDetailsResult {
 	method := "/finance/transaction/detail/get"
 	params := lib.InRow{
@@ -53,9 +53,9 @@ func (s *Finance) GetTransactionDetails(transType string, startTime string, endT
 	return result
 }
 
-//QueryTransactionDetails
-//@Title API to query seller transaction details within specific date range.
-//@Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=9&path=/finance/transaction/details/get
+// QueryTransactionDetails
+// @Title API to query seller transaction details within specific date range.
+// @Description https://open.lazada.com/doc/api.htm?spm=a2o9m.11193531.0.0.78de6bbeqtnjmQ#/api?cid=9&path=/finance/transaction/details/get
 func (s *Finance) QueryTransactionDetails(offset string, transType string, tradeOrderId string, limit string, startTime string, endTime string, tradeOrderLineId string) financeentity.QueryTransactionDetailsResult {
 	method := "/finance/transaction/details/get"
 	params := lib.InRow{
