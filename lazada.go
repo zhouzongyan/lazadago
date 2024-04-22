@@ -19,6 +19,8 @@ import (
 	freeshippingentity "github.com/zhouzongyan/lazadago/freeshipping/entity"
 	"github.com/zhouzongyan/lazadago/gspproduct"
 	gspproductentity "github.com/zhouzongyan/lazadago/gspproduct/entity"
+	"github.com/zhouzongyan/lazadago/im"
+	messageEntity "github.com/zhouzongyan/lazadago/im/entity"
 	"github.com/zhouzongyan/lazadago/logistics"
 	logisticsentity "github.com/zhouzongyan/lazadago/logistics/entity"
 	"github.com/zhouzongyan/lazadago/mediacenter"
@@ -199,6 +201,8 @@ type Lazadar interface {
 	UploadLazadaBagNumber(trackingNumbers []string, erpBagNumber string, parcelsTotal int, lzdBagNumber string) firstmilebigbagentity.UploadLazadaBagNumberResult
 	UploadSellerBagNumber(trackingNumbers []string, erpBagNumber string, parcelsTotal int) firstmilebigbagentity.UploadSellerBagNumberResult
 	GetChannelcodeByFirstMileNo(firstMileNos []string) firstmilebigbagentity.GetChannelcodeByFirstMileNoResult
+	// im
+	GetSeesions(start, pageSize int) messageEntity.GetSeesions
 }
 
 // Lazada
@@ -221,6 +225,7 @@ type Lazada struct {
 	mediacenter.MediaCenter
 	productreview.ProductReview
 	firstmilebigbag.FirstMileBigbag
+	im.Message
 }
 
 // SetAccessToken 设置token
@@ -266,5 +271,6 @@ func NewApi(cfg *lazadaConfig.Config) Lazadar {
 		mediacenter.MediaCenter{Config: cfg},
 		productreview.ProductReview{Config: cfg},
 		firstmilebigbag.FirstMileBigbag{Config: cfg},
+		im.Message{Config: cfg},
 	}
 }
