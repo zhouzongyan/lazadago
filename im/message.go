@@ -10,7 +10,7 @@ type Message struct {
 	Config *lazadaConfig.Config
 }
 
-func (s *Message) GetAwbDocumentHtml(start, pageSize int) messageEntity.GetSeesions {
+func (s *Message) GetSeesions(start, pageSize int) messageEntity.GetSeesions {
 	method := "/im/session/list"
 	params := lib.InRow{
 		"start_time": start,
