@@ -203,6 +203,7 @@ type Lazadar interface {
 	GetChannelcodeByFirstMileNo(firstMileNos []string) firstmilebigbagentity.GetChannelcodeByFirstMileNoResult
 	// im
 	GetSeesions(start, pageSize int) messageEntity.GetSeesions
+	GetMessages(sessionId, start, pageSize int) messageEntity.GetMessages
 }
 
 // Lazada
