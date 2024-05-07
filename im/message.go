@@ -23,3 +23,18 @@ func (s *Message) GetSeesions(start, pageSize int) messageEntity.GetSeesions {
 	}
 	return result
 }
+
+func (s *Message) GetMessages(sessionId, start, pageSize int) messageEntity.GetMessages {
+	method := "/im/message/list"
+	params := lib.InRow{
+		"session_id": sessionId,
+		"start_time": start,
+		"page_size":  pageSize,
+	}
+	result := messageEntity.GetMessages{}
+	err := s.Config.HttpGet(method, params, &result)
+	if err != nil {
+		result.Code = err.Error()
+	}
+	return result
+}

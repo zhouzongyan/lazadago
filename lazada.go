@@ -248,6 +248,7 @@ func (l *Lazada) SetAccessToken(accessToken string) {
 	l.MediaCenter.Config.SetAccessToken(accessToken)
 	l.ProductReview.Config.SetAccessToken(accessToken)
 	l.FirstMileBigbag.Config.SetAccessToken(accessToken)
+	l.Message.Config.SetAccessToken(accessToken)
 }
 
 // NewApi
