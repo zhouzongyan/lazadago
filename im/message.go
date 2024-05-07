@@ -24,7 +24,7 @@ func (s *Message) GetSeesions(start, pageSize int) messageEntity.GetSeesions {
 	return result
 }
 
-func (s *Message) GetMessages(sessionId, start, pageSize int) messageEntity.GetMessages {
+func (s *Message) GetMessages(sessionId string, start, pageSize int) messageEntity.GetMessages {
 	method := "/im/message/list"
 	params := lib.InRow{
 		"session_id": sessionId,
