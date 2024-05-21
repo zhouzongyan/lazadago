@@ -202,8 +202,8 @@ type Lazadar interface {
 	UploadSellerBagNumber(trackingNumbers []string, erpBagNumber string, parcelsTotal int) firstmilebigbagentity.UploadSellerBagNumberResult
 	GetChannelcodeByFirstMileNo(firstMileNos []string) firstmilebigbagentity.GetChannelcodeByFirstMileNoResult
 	// im
-	GetSeesions(start, pageSize int) messageEntity.GetSeesions
-	GetMessages(sessionId string, start, pageSize int) messageEntity.GetMessages
+	GetSeesions(start, pageSize int, lastSeesionId string) messageEntity.GetSeesions
+	GetMessages(sessionId string, start, pageSize int, lastSeesionId string) messageEntity.GetMessages
 }
 
 // Lazada

@@ -10,11 +10,18 @@ type Message struct {
 	Config *lazadaConfig.Config
 }
 
-func (s *Message) GetSeesions(start, pageSize int) messageEntity.GetSeesions {
+func (s *Message) GetSeesions(start, pageSize int, lastSeesionId string) messageEntity.GetSeesions {
 	method := "/im/session/list"
 	params := lib.InRow{
 		"start_time": start,
 		"page_size":  pageSize,
+	}
+	if lastSeesionId != "" {
+		params = lib.InRow{
+			"start_time":      start,
+			"page_size":       pageSize,
+			"last_session_id": lastSeesionId,
+		}
 	}
 	result := messageEntity.GetSeesions{}
 	err := s.Config.HttpGet(method, params, &result)
@@ -24,12 +31,20 @@ func (s *Message) GetSeesions(start, pageSize int) messageEntity.GetSeesions {
 	return result
 }
 
-func (s *Message) GetMessages(sessionId string, start, pageSize int) messageEntity.GetMessages {
+func (s *Message) GetMessages(sessionId string, start, pageSize int, lastSeesionId string) messageEntity.GetMessages {
 	method := "/im/message/list"
 	params := lib.InRow{
 		"session_id": sessionId,
 		"start_time": start,
 		"page_size":  pageSize,
+	}
+	if lastSeesionId != "" {
+		params = lib.InRow{
+			"session_id":      sessionId,
+			"start_time":      start,
+			"page_size":       pageSize,
+			"last_message_id": lastSeesionId,
+		}
 	}
 	result := messageEntity.GetMessages{}
 	err := s.Config.HttpGet(method, params, &result)
